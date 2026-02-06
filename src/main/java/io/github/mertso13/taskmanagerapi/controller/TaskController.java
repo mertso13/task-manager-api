@@ -1,6 +1,5 @@
 package io.github.mertso13.taskmanagerapi.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.http.HttpStatus;
@@ -10,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,7 +19,6 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.ArraySchema;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
@@ -42,8 +41,7 @@ public class TaskController {
     )
 )
 public List<Task> getAllTasks() {
-    // TODO: Implement
-    return new ArrayList<>();
+    return taskService.getAllTasks();
     }
 
 @GetMapping("/{id}")
@@ -57,8 +55,7 @@ public List<Task> getAllTasks() {
     description = "Task couldn't found"
 )
 public Task getTaskByID(@PathVariable Long id){
-    // TODO: Implement
-    return null;
+    return taskService.getTaskByID(id);
     }
 
 @PostMapping
@@ -72,8 +69,8 @@ public Task getTaskByID(@PathVariable Long id){
     description = "Invalid input"
 )
 public ResponseEntity<Task> createTask(@RequestBody Task task) {
-    // TODO: Implement
-    return new ResponseEntity<>(task, HttpStatus.CREATED);
+    Task createdTask = taskService.createTask(task);
+    return new ResponseEntity<>(createdTask, HttpStatus.CREATED);
     }
 
 @PutMapping("/{id}")
@@ -87,11 +84,8 @@ public ResponseEntity<Task> createTask(@RequestBody Task task) {
     description = "Task couldn't found"
 )
 public ResponseEntity<Task> updateTask(@PathVariable Long id, @RequestBody Task updatedTask) {
-    // TODO:
-    // find task in db
-    // update task with updatedTask
-    // save updated version
-    return ResponseEntity.ok(null);
+    Task savedTask = taskService.updateTask(id, updatedTask);
+    return ResponseEntity.ok(savedTask);
     
     }
 
@@ -106,7 +100,7 @@ public ResponseEntity<Task> updateTask(@PathVariable Long id, @RequestBody Task 
     description = "Task couldn't found"
 )
 public ResponseEntity<Void> deleteTask(@PathVariable Long id) {
-    // TODO: Implement
+    taskService.deleteTask(id);
     return ResponseEntity.noContent().build();
     }
 }
