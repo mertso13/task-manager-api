@@ -3,7 +3,6 @@ package io.github.mertso13.taskmanagerapi.model;
 import lombok.Data;
 import java.time.LocalDateTime;
 
-import io.github.mertso13.taskmanagerapi.TaskStatus;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
