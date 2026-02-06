@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import io.github.mertso13.taskmanagerapi.Task;
+import io.github.mertso13.taskmanagerapi.model.Task;
 import io.github.mertso13.taskmanagerapi.service.TaskService;
 import org.springframework.transaction.annotation.Transactional;
 import lombok.RequiredArgsConstructor;

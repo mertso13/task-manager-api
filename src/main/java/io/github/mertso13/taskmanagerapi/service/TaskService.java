@@ -2,7 +2,7 @@ package io.github.mertso13.taskmanagerapi.service;
 
 import java.util.List;
 
-import io.github.mertso13.taskmanagerapi.Task;
+import io.github.mertso13.taskmanagerapi.model.Task;
 
 public interface TaskService {
     List<Task> getAllTasks();
