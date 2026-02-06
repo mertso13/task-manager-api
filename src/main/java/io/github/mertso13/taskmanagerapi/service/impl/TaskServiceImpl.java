@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import io.github.mertso13.taskmanagerapi.model.Task;
+import io.github.mertso13.taskmanagerapi.repository.TaskRepository;
 import io.github.mertso13.taskmanagerapi.service.TaskService;
 import org.springframework.transaction.annotation.Transactional;
 import lombok.RequiredArgsConstructor;
@@ -12,6 +13,8 @@ import lombok.RequiredArgsConstructor;
 @Service
 @RequiredArgsConstructor
 public class TaskServiceImpl implements TaskService {
+
+    private final TaskRepository taskRepository;
 
     @Override
     @Transactional(readOnly = true)
