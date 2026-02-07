@@ -1,8 +1,10 @@
 # Task Manager API
 
-![Build Status](https://github.com/mertso13/task-management-api/actions/workflows/maven.yml/badge.svg)
-
-This project is tested with unit tests. All test cases are passing, as shown by the build status badge above.
+<p>
+  <img src="https://img.shields.io/github/actions/workflow/status/mertso13/task-manager-api/maven.yml?branch=main&label=tests" alt="Build Status"/>
+  <img src="https://img.shields.io/badge/Java-25-blue.svg" alt="Java 25"/>
+  <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License"/>
+</p>
 
 ## Project Overview
 Although we frequently used Java in class, I didn't have a personal project. 
