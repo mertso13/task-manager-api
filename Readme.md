@@ -3,6 +3,7 @@
 <p>
   <img src="https://img.shields.io/github/actions/workflow/status/mertso13/task-manager-api/maven.yml?branch=main&label=tests" alt="Build Status"/>
   <img src="https://img.shields.io/badge/Java-25-blue.svg" alt="Java 25"/>
+  <img src="https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=fff"alt="Docker"/>
   <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License"/>
 </p>
 
